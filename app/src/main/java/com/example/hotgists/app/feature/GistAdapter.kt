@@ -16,10 +16,10 @@ import com.example.hotgists.databinding.GistItemBinding
 
 
 class GistAdapter(
-    val clickListener: (String) -> Unit,
+    private val clickListener: (String) -> Unit,
     val gistList: List<GistList>,
     val favOrUnFav: (String) -> Unit,
-    val sharedPreferences: SharedPreferences?
+    private val sharedPreferences: SharedPreferences?
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     class GistViewHolder(val binding: GistItemBinding) :

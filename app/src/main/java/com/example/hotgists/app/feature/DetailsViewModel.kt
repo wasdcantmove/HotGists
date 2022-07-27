@@ -20,7 +20,6 @@ import javax.inject.Inject
 @HiltViewModel
 class DetailsViewModel @Inject constructor(
     private val localGistRepository: LocalGistRepository,
-    state: SavedStateHandle
 ) : ViewModel() {
 
     val gist: LiveData<Event<GistList>> get() = _gist
@@ -40,13 +39,13 @@ class DetailsViewModel @Inject constructor(
                 {
                     error.trigger()
                 }
-            )?.let(compositeDisposable::add)
+            ).let(compositeDisposable::add)
     }
 
     fun favOrUnFav(id: String, sharedPrefs: SharedPreferences?) {
         val currentFavs = sharedPrefs?.getString(MainViewModel.FAV_STRING, "")
         if (currentFavs?.contains(id) == true) {
-            sharedPrefs?.edit {
+            sharedPrefs.edit {
                 putString(MainViewModel.FAV_STRING, currentFavs.replace(",$id", ""))
             }
         } else {

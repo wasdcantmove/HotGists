@@ -88,7 +88,6 @@ class MainViewModel @Inject constructor(
 
     companion object {
         const val LAST_TIME_PREF = "LAST_TIME_PREF"
-        private const val SAVED_GIST_LIST = "savedGistList"
         private const val LAST_TIME = "CURRENT_TIME"
         const val FAV_STRING = "FAV_STRING"
         const val EIGHT_HOURS = 28800000

@@ -23,6 +23,6 @@ abstract class GistDatabase : RoomDatabase() {
     abstract fun gistDao(): GistDao
 
     companion object {
-        val DATABASE_NAME: String = "gist-database"
+        const val DATABASE_NAME: String = "gist-database"
     }
 }

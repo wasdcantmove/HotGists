@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_home"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.hotgists.app.feature.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_hotFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment"
+            app:enterAnim="@anim/slide_up"
+            app:exitAnim="@anim/stay"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/stay"
+            app:popExitAnim="@anim/slide_down"
+            app:popUpTo="@+id/mainFragment"
+            app:popUpToInclusive="false" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.example.hotgists.app.feature.DetailsFragment"
+        android:label="DetailsFragment">
+        <argument
+            android:name="selectedGist"
+            app:argType="string" />
+    </fragment>
+</navigation>

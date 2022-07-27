@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HotGists.iml" filepath="$PROJECT_DIR$/.idea/modules/HotGists.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/HotGists.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/HotGists.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/HotGists.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/HotGists.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/HotGists.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/HotGists.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/HotGists.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/HotGists.app.unitTest.iml" />
+    </modules>
+  </component>
+</project>

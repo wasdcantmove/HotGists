@@ -1,0 +1,114 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+android {
+    compileSdkVersion 32
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+    }
+    defaultConfig {
+        applicationId "com.example.hostgists"
+        minSdkVersion project.min_sdk_version
+        targetSdkVersion project.target_sdk_version
+        versionCode 1
+        multiDexEnabled true
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "com.google.android.material:material:$material_version"
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+
+    implementation "io.reactivex.rxjava2:rxandroid:$rx_android_version"
+
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
+
+    implementation "androidx.navigation:navigation-fragment-ktx:$android_navigation_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$android_navigation_version"
+    implementation "androidx.hilt:hilt-navigation-fragment:1.0.0"
+
+
+    implementation "com.google.dagger:dagger:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+
+    implementation 'com.google.code.gson:gson:2.8.9'
+
+//    implementation "android.arch.paging:runtime:$android_paging_version"
+//    implementation "android.arch.paging:rxjava2:$android_paging_version"
+
+    implementation "androidx.room:room-runtime:$room_version"
+//    annotationProcessor "androidx.room:room-compiler::$room_version"
+//    kapt "android.arch.persistence.room:compiler:1.1.1"
+
+    api "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    api "androidx.room:room-rxjava2:$room_version"
+    api "androidx.core:core-ktx:$ktx_version"
+
+    api "com.squareup.retrofit2:retrofit:$retrofit_version"
+    api "com.squareup.retrofit2:adapter-rxjava2:$rx_retrofit_version"
+    api "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    api "joda-time:joda-time:$jodatime_version"
+
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.0-rc02'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0-rc02'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
+    implementation 'com.github.3lyan:slider-gallery-zoom:1.0.1'
+
+
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    implementation 'io.reactivex.rxjava3:rxjava:3.0.7'
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.0-alpha01"
+
+
+    testImplementation "junit:junit:$junit_version"
+
+    testImplementation "com.nhaarman:mockito-kotlin-kt1.1:$mockito_kotlin"
+    testImplementation "org.assertj:assertj-core:$assertJ_version"
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
+    testImplementation 'org.mockito:mockito-inline:2.13.0'
+    testImplementation 'org.mockito:mockito-core:3.10.0'
+    androidTestImplementation 'org.mockito:mockito-android:3.10.0'
+
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.11.1'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.1'
+
+}
